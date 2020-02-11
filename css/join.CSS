@@ -1,0 +1,253 @@
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+}
+
+.pimg1, .pimg2{
+  position:relative;
+  opacity:0.70;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  /*
+    fixed = parallax
+    scroll = normal
+  */
+  background-attachment:fixed;
+}
+
+.pimg1{
+  background-image:url('./image/JOIN.jpg');
+  min-height:400px;
+}
+
+.pimg2{
+  background-image:url('./image/img2.jpg');
+  min-height:400px;
+}
+
+
+.section{
+  text-align:center;
+  padding:50px 80px;
+}
+
+.section-light{
+  background-color:#f4f4f4;
+  color:#666;
+}
+
+
+.ptext{
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  font-weight: 20px
+}
+
+.ptext .border.trans{
+  background-color:#111;
+  color:#fff;
+}
+
+@media(max-width:568px){
+  .pimg1, .pimg2{
+    background-attachment:scroll;
+  }
+}
+nav
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: rgba(0,0,0,0.7);
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+/* Icon */
+nav #Secureparking {
+  float: left;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-left: -50px;
+}
+nav #Secureparking a {
+   position: relative;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .5%;
+  letter-spacing: 2px;
+  font-size: 26px;
+}
+nav #Secureparking a:hover {
+  letter-spacing: 4px;
+}
+/* Menu */
+nav #menu
+{
+  float: right;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav #menu li
+{
+  list-style: none;
+}
+nav #menu li a
+{
+  position: relative;
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .5%;
+}
+nav #menu li a:hover
+{
+  color: #262626;
+}
+nav #menu li a:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform-origin: right;
+  z-index: -1;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+nav #menu li a:hover:before
+{
+  transform-origin: left;
+  transform: scaleX(1);
+
+}
+#toggle {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  float: right;
+  transition: all 0.3s ease-out;
+  visibility: hidden;
+  opacity: 0;
+}
+#toggle .span{
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease-out;
+  backface-visibility: hidden;
+  margin: 5px auto;
+}
+
+#toggle .on #one {
+  transform: rotate(45deg) translateX(2px) translateY(4px);
+}
+
+#toggle .on #two {
+  opacity: 0;
+}
+
+#toggle .on #three {
+  transform: rotate(-45deg) translateX(8px) translateY(-10px);
+}
+
+#resize {
+  z-index: 1;
+  top: 0px;
+  position: absolute;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-out;
+  display: table;
+}
+
+#resize #menu {
+  height: 50px;
+  display: table-cell;
+  vertical-align: center;
+}
+
+#resize #menu li {
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 50px;
+  min-height: 50px;
+  font-weight: 200;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+#resize #menu li a {
+  color: #fff;
+}
+
+#resize .active {
+  visibility: visible;
+  opacity: 0.99;
+}
+
+@media(max-width: 768px) {
+  #toggle {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 6px;
+  }
+
+  nav #Secureparking {
+    margin-left: 18px;
+  }
+
+  #menu a{
+    font-family: "poppins";
+    font-weight: 200;
+    font-size: 20px;
+  }
+
+  nav #menu {
+    display: none;
+  }
+
+}
+
+@media(min-width: 768px) {
+  #resize {
+    visibility: hidden !important;
+  }
+}
